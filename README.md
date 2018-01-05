@@ -1,5 +1,14 @@
 # dtables
 
+dtables is a Python based minimalistic framework for exploratory data analysis. This project is under development. A rough [API map is available](https://manasgarg.gitbooks.io/dtables/content/load-data.html).
+
+## Goals
+
+* **Minimal** - Quick to learn and get going. Useful for programmers who are just dabbling in data analysis. Not necessarily for pros whose day job is data analysis. Focus on "one way to solve problems" rather than "different ways to match different situations".
+* **Complete** - Minimal does not mean incomplete. Do not leave important use cases unaddressed. Try to address them without adding concepts.
+
+Performance is not an initial goal. The current objective is to make it work well for smallish datasets (10s of MBs).
+
 ## Features
 
 ### Loaders
