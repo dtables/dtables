@@ -1,9 +1,22 @@
 from terminaltables import AsciiTable
+from .errors import LengthMismatchException
+from .varnames import VariableNames
 
 class DTable(object):
     def __init__(self, variable_names=[], data_list=[]):
-        self.variable_names = variable_names
         self.data_list = data_list
+        self.variable_names = variable_names
+
+    @property
+    def variable_names(self):
+        return self._variable_names
+
+    @variable_names.setter
+    def variable_names( self, new_variable_names):
+        if len(new_variable_names) != len(self.data_list):
+            raise LengthMismatchException('{} variables passed, expecected {}'.format(
+                len(new_variable_names), len(self.data_list)))
+        self._variable_names = VariableNames(new_variable_names)
 
     def __repr__( self):
         table_data = []

@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 from .core import DTable
-from .errors import ShapeMismatchException
-from .errors import MultipleDimentionException
+from .errors import (ShapeMismatchException,
+    MultipleDimentionException)
 
 def load_dict(d):
     variable_names = []

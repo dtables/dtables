@@ -3,8 +3,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from dtables.errors import ShapeMismatchException
-from dtables.errors import MultipleDimentionException
+from dtables.errors import (ShapeMismatchException,
+    MultipleDimentionException,
+    LengthMismatchException)
 
 def test_load_dict():
     dt = dtables.load_dict({
