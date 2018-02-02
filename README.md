@@ -12,19 +12,24 @@ Performance is not an initial goal. The current objective is to make it work wel
 ## Features
 
 ### Loaders
-- [ ] load_dict
-- [ ] load_tuples
-- [ ] load_csv
+- [x] load_dict
+- [x] load_tuples
+- [x] load_csv
 - [ ] load_json
 - [ ] load_table
 
 ### Overview
-- [ ] column names
+- [x] column names
 - [ ] dtypes
 - [ ] shape
 - [ ] describe
 
-### Slicing
+### Column name Slicing
+- [ ] name based
+- [ ] position based 
+
+
+### Dtable Slicing
 #### Column Based
 - [ ] single column name
 - [ ] array of column names
