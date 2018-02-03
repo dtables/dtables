@@ -18,19 +18,38 @@ class DTable(object):
                 len(new_variable_names), len(self.data_list)))
         self._variable_names = VariableNames(new_variable_names)
 
-    def __repr__( self):
+    def view( self, start_index = 0, count = 5):
         table_data = []
         variable_names = self.variable_names
         data_list = self.data_list
-
+        len_data = len(data_list[0])
+        if len_data < start_index+count: count = len_data - start_index
         table_data.append(variable_names)
-        len_data = len(data_list)
-        if len_data > 10:
-            for index in range(10):
-                table_data.append(list(zip(*data_list))[index])
-        else:
-            for index in range(len(data_list[0])):
-                table_data.append(list(zip(*data_list))[index])
+
+        if len_data < start_index:
+            raise IndexError('{} is greater than the length of the data'.format(start_index))
+
+        for index in range(start_index, start_index+count, 1):
+            table_data.append(list(zip(*data_list))[index])
 
         table = AsciiTable(table_data)
         return table.table
+
+    def head( self, n = None):
+        if not n: n = 5
+        return self.view(0, n)
+
+    def tail( self, n = None):
+        data_list = self.data_list
+        len_data = len(data_list[0])
+
+        if not n: n = 5
+        return self.view(len_data - n, n)
+
+    def __repr__( self):
+        data_list = self.data_list
+        len_data = len(data_list[0])
+        if len_data > 10:
+            return self.view(0, 10)
+        else:
+            return self.view(0, len_data)
