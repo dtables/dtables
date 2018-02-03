@@ -20,13 +20,15 @@ Performance is not an initial goal. The current objective is to make it work wel
 
 ### Overview
 - [x] column names
+- [x] head
+- [x] tail 
 - [ ] dtypes
 - [ ] shape
 - [ ] describe
 
 ### Column name Slicing
 - [ ] name based
-- [ ] position based 
+- [ ] position based
 
 
 ### Dtable Slicing
